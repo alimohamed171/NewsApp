@@ -23,7 +23,7 @@ import com.example.newsapp.util.Constants
 import com.example.newsapp.util.Resource
 
 
-class HeadlinesFragment : Fragment() {
+class HeadlinesFragment : Fragment(R.layout.fragment_headlines) {
 
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
@@ -39,7 +39,7 @@ class HeadlinesFragment : Fragment() {
         itemHeadlinesError = view.findViewById(R.id.itemHeadlinesError)
         // we want to inflate this item error into our fragment so we need layoutInflater
         val inflater = requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val itemErrorView: View = inflater.inflate(R.layout.item_error,null)
+        val view: View = inflater.inflate(R.layout.item_error,null)
 
         retryButton = view.findViewById(R.id.retryButton)
         errorText = view.findViewById(R.id.errorText)
