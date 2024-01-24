@@ -65,7 +65,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         binding.searchEdit.addTextChangedListener {editable ->
             job?.cancel()
             job = MainScope().launch { 
-                delay(5000L)
+                delay(1000L)
                 editable?.let {
                     if(editable.toString().isNotEmpty()){
                         newsViewModel.searchNews(editable.toString())
